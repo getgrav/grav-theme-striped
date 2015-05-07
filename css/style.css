@@ -290,6 +290,31 @@
 					margin: 0 auto;
 					width: auto;
 				}
+				.list-blog-date, .list-blog-author {
+					text-align: center;
+					background-color: rgba(101, 97, 97, 0.1);
+					padding: 0.7rem 1rem;
+					margin-bottom: 0.2rem;
+					margin-right: 0.5rem;
+					font-size: 1rem;
+					text-transform: uppercase;
+					color: #9A9898;
+				}
+				.tags {
+					margin: 0;
+					padding: 0;
+					display: inline;
+					background-color: rgba(101, 97, 97, 0.1);
+					padding: 0.7rem 1rem;
+					margin-bottom: 0.2rem;
+					list-style: none;
+					text-align: center;
+				}
+				.tags li {
+					display: inline-block;
+					font-size: 1rem;
+					text-transform: uppercase;
+				}
 	
 	/* Button */
 
