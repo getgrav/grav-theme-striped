@@ -1,0 +1,28 @@
+{
+    "name": "getgrav/grav-theme-striped",
+    "type": "grav-theme",
+    "description": "Striped by HTML5 UP, features a clean, minimalistic design, styling for all basic page elements, a repositionable sidebar (left or right), and HTML5/CSS3 code designed for quick and easy customization.",
+    "keywords": ["theme","grav", "striped"],
+    "homepage": "http://getgrav.org",
+    "license": "CC BY 3.0",
+    "support": {
+        "irc": "irc://irc.freenode.org/grav"
+    },
+    "authors": [
+        {
+            "name": "Team Grav",
+            "email": "devs@getgrav.org",
+            "homepage": "http://getgrav.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "installer-name": "striped",
+        "installer-paths": {
+            "user/themes/{$name}/": ["getgrav/grav-theme-striped"]
+        }
+    }
+}
