@@ -19,7 +19,7 @@
             {% do assets.addJs('theme://js/init.js') %}
         {% endblock %}
         {{ assets.js() }}
-                <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
         {% block stylesheets %}
             {% do assets.addCss('theme://css/skel.css') %}
@@ -38,6 +38,7 @@
                 hideIfNoPrevNext: true
             });
         });
+
         </script>
         {% endblock head%}
     </head>

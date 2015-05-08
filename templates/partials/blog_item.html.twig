@@ -1,4 +1,13 @@
 <article class="box post post-excerpt">
+
+    <script type="text/javascript">
+    jQuery.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url={{ page.url(true) }}/&callback=?', function (data) {
+        jQuery('#so-url-shares{{ loop.index }}').text(data.count);
+    });
+    jQuery.getJSON('http://graph.facebook.com/?id={{ page.url(true) }}', function (data) {
+        jQuery('#so-fburl-shares{{ loop.index }}').text(data.shares);
+    });
+    </script>
     <header>
         {% if page.header.link %}
             <h2>
@@ -21,13 +30,10 @@
             <span class="day">{{ page.date|date("d") }}</span>
         </span>    
             <ul class="stats">
-                <li><a href="#" class="icon fa-comment">16</a></li>
-                <li><a href="#" class="icon fa-heart">32</a></li>
-                <li><a href="#" class="icon fa-twitter">64</a></li>
-                <li><a href="#" class="icon fa-facebook">128</a></li>
+                <li><a href="https://twitter.com/share" data-url="{{ page.url(true) }}" data-text="{{ page.title }}" class="icon fa-twitter"><span id="so-url-shares{{ loop.index }}"><i class="fa fa-circle-o-notch fa-spin"></i></span></a></li>
+                <li><a href="http://www.facebook.com/sharer.php?u={{ page.url(true) }}" class="icon fa-facebook"><span id="so-fburl-shares{{ loop.index }}">0</span></a></li>
             </ul>
         </div>
-
 
         {% if big_header %}
             {{ page.media.images|first.cropResize(1038,437).html(page.title, page.title, 'image featured') }}
