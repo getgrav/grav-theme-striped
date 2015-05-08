@@ -53,13 +53,6 @@
             {{ page.media.images|first.cropZoom(1038,437).html(page.title, page.title, 'image featured') }}
         {% endif %}
 
-        
-
-        <span class="list-blog-date">
-            <i class="fa fa-calendar"></i>
-            {{ page.date|date("d") }}, {{ page.date|date("M") }}
-        </span>
-        
         {% if page.header.author %}
         <span class="list-blog-author">
             <i class="fa fa-user"></i>
