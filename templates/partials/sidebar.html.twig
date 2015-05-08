@@ -53,11 +53,13 @@
 {% endif %}
 
 {% if config.plugins.feed.enabled %}
-<div class="sidebar-content syndicate">
-    <h4>Syndicate</h4>
-    <a class="button" href="{{ feed_url }}.atom"><i class="fa fa-rss-square"></i> Atom 1.0</a>
-    <a class="button" href="{{ feed_url }}.rss"><i class="fa fa-rss-square"></i> RSS</a>
-</div>
+<section class="box text-style1">
+    <header>
+        <h2>Syndicate</h2>
+    </header>
+    <a class="button" style="padding-right: 1em;padding-left: 1em;" href="{{ feed_url }}.atom"><i class="fa fa-rss-square"></i> Atom 1.0</a>
+    <a class="button" style="padding-right: 1em;padding-left: 1em;" href="{{ feed_url }}.rss"><i class="fa fa-rss-square"></i> RSS</a>
+</section>
 {% endif %}
 
 <ul id="copyright">
