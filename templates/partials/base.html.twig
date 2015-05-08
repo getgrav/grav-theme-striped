@@ -16,9 +16,11 @@
             {% do assets.add('jquery',101) %}
             {% do assets.addJs('theme://js/skel.min.js') %}
             {% do assets.addJs('theme://js/skel-layers.min.js') %}
-            {% do assets.addJs('theme://js/init.js') %}
         {% endblock %}
         {{ assets.js() }}
+
+        {% include 'partials/init.html.twig' %}
+
          <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
         {% block stylesheets %}

@@ -9,10 +9,12 @@
 </section>
 {% endif %}
 {% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
-<div class="sidebar-content">
-    <h4>Related Posts</h4>
+<section class="box recent-comments">
+    <header>
+        <h2>Related Posts</h2>
+    </header>
     {% include 'partials/relatedpages.html.twig' %}
-</div>
+</section>
 {% endif %}
 {% if config.plugins.random.enabled %}
 <section class="box text-style1">
