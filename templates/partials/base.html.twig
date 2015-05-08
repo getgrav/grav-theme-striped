@@ -19,6 +19,7 @@
             {% do assets.addJs('theme://js/init.js') %}
         {% endblock %}
         {{ assets.js() }}
+                <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
         {% block stylesheets %}
             {% do assets.addCss('theme://css/skel.css') %}
@@ -30,6 +31,14 @@
             {{ assets.css() }}
         </noscript>
         <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+        <script type="text/javascript">
+         $(function() {
+            $( "#datepicker" ).datepicker({
+                hideIfNoPrevNext: true
+            });
+        });
+        </script>
         {% endblock head%}
     </head>
     <body class="left-sidebar">
