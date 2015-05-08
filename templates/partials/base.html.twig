@@ -21,7 +21,9 @@
 
         {% include 'partials/init.html.twig' %}
 
+         {% if site.calendar %}
          <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+         {% endif %}
 
         {% block stylesheets %}
             {% do assets.addCss('theme://css/skel.css') %}
@@ -34,14 +36,16 @@
         </noscript>
         <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 
+        {% if site.calendar %}
         <script type="text/javascript">
          $(function() {
             $( "#datepicker" ).datepicker({
                 hideIfNoPrevNext: true
             });
         });
-
         </script>
+        {% endif %}
+        
         {% endblock head%}
     </head>
     <body class="left-sidebar">

@@ -1,13 +1,19 @@
 <article class="box post post-excerpt">
 
+    {% if site.share.facebook or site.share.twitter %}
     <script type="text/javascript">
+    {% if site.share.twitter %}
     jQuery.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url={{ page.url(true) }}/&callback=?', function (data) {
         jQuery('#so-url-shares{{ loop.index }}').text(data.count);
     });
+    {% endif %}
+    {% if site.share.facebook %}
     jQuery.getJSON('http://graph.facebook.com/?id={{ page.url(true) }}', function (data) {
         jQuery('#so-fburl-shares{{ loop.index }}').text(data.shares);
     });
+    {% endif %}
     </script>
+    {% endif %}
     <header>
         {% if page.header.link %}
             <h2>
@@ -29,10 +35,16 @@
             <span class="month">{{ page.date|date("M") }}</span> 
             <span class="day">{{ page.date|date("d") }}</span>
         </span>    
+            {% if site.share.facebook or site.share.twitter %}
             <ul class="stats">
+                {% if site.share.twitter %}
                 <li><a href="https://twitter.com/share" data-url="{{ page.url(true) }}" data-text="{{ page.title }}" class="icon fa-twitter"><span id="so-url-shares{{ loop.index }}"><i class="fa fa-circle-o-notch fa-spin"></i></span></a></li>
+                {% endif %}
+                {% if site.share.facebook %}
                 <li><a href="http://www.facebook.com/sharer.php?u={{ page.url(true) }}" class="icon fa-facebook"><span id="so-fburl-shares{{ loop.index }}">0</span></a></li>
+                {% endif %}
             </ul>
+            {% endif %}
         </div>
 
         {% if big_header %}
@@ -72,10 +84,10 @@
         {% endif %}
     {% elseif truncate and page.summary != page.content %}
         <p>{{ page.summary }}</p>
-        <p><a href="{{ page.url }}">Continue Reading...</a></p>
+        <p><a class="button" href="{{ page.url }}">Continue Reading...</a></p>
     {% elseif truncate %}
         <p>{{ page.content|truncate(550) }}</p>
-        <p><a href="{{ page.url }}">Continue Reading...</a></p>
+        <p><a class="button" href="{{ page.url }}">Continue Reading...</a></p>
     {% else %}
         <p>{{ page.content }}</p>
         {% set show_prev_next = true %}
