@@ -9,7 +9,7 @@
         <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
         {% include 'partials/metadata.html.twig' %}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png" />
+        <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
 
         {% block javascripts %}
             <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->

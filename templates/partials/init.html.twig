@@ -4,12 +4,12 @@
   skel.init({
     reset: 'full',
     breakpoints: {
-      global:   { range: '*', href: '{{ theme_url }}/css/style.css', containers: '100%', grid: { gutters: 50 }, viewport: { scalable: false } },
-      desktop:  { range: '737-', href: '{{ theme_url }}/css/style-desktop.css' },
-      wide:   { range: '1201-', href: '{{ theme_url }}/css/style-wide.css' },
-      narrow:   { range: '737-1200', href: '{{ theme_url }}/css/style-narrow.css' },
-      narrower: { range: '737-1000', href: '{{ theme_url }}/css/style-narrower.css' },
-      mobile:   { range: '-736', href: '{{ theme_url }}/css/style-mobile.css', containers: '100%!', grid: { collapse: true } }
+      global:   { range: '*', href: '{{ url('theme://css/style.css') }}', containers: '100%', grid: { gutters: 50 }, viewport: { scalable: false } },
+      desktop:  { range: '737-', href: '{{ url('theme://css/style-desktop.css') }}' },
+      wide:   { range: '1201-', href: '{{ url('theme://css/style-wide.css') }}' },
+      narrow:   { range: '737-1200', href: '{{ url('theme://css/style-narrow.css') }}' },
+      narrower: { range: '737-1000', href: '{{ url('theme://css/style-narrower.css') }}' },
+      mobile:   { range: '-736', href: '{{ url('theme://css/style-mobile.css') }}', containers: '100%!', grid: { collapse: true } }
     },
     plugins: {
       layers: {
