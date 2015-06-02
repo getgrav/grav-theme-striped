@@ -2,11 +2,9 @@
 html5up.net | @n33co
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
-
 And here's a new one: Striped, which features a clean, minimalistic design, styling for 
 all basic page elements (including blockquotes, tables and lists), a repositionable 
 sidebar (left or right), and HTML5/CSS3 code designed for quick and easy customization 
-(see code comments for details).
 
 Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
 you can use for pretty much whatever.
