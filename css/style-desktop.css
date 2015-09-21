@@ -13,6 +13,11 @@
 		height: 100%;
 	}
 	
+	button.button {
+		font-size: 12pt;
+		border: 0 none;
+	}
+
 	body,input,textarea,select
 	{
 		line-height: 1.75em;
