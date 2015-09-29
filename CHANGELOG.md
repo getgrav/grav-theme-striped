@@ -1,3 +1,10 @@
+# v2.0.0
+## 09/21/2015
+
+1. [](#improved)
+    * Reworked codebase for better compatibility and css handling
+    * Lots of fixes
+
 # v1.2.0
 ## 09/21/2015
 

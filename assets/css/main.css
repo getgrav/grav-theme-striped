@@ -1951,10 +1951,11 @@
 		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
 	}
 
-	.box.calendar caption {
+	.box.calendar caption, .ui-datepicker-title {
 		font-weight: 700;
 		color: #fff;
 		margin: 0 0 0.25em 0;
+		text-align: center;
 	}
 
 	.box.calendar table {
@@ -2002,12 +2003,16 @@
 			color: #fff;
 		}
 
-	.box.calendar td.today a {
+	.box.calendar td.today a, .box.calendar .ui-datepicker-current-day a {
 		background-color: #c94663;
 		background-image: url("images/bg01.png");
 		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.15), 0 0.025em 0.15em 0em rgba(0, 0, 0, 0.25);
 		color: #fff !important;
 	}
+
+.ui-datepicker-next, .ui-datepicker-prev {
+	display: none;
+}
 
 	.box.post {
 		position: relative;
