@@ -11,46 +11,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
 
-        {% block javascripts %}
-            <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/html5shiv.js') }}"></script><![endif]-->
+        {% block stylesheets %}
+            {% do assets.addCss('theme://assets/css/main.css') %}
+        {% endblock %}
+        {{ assets.css() }}
 
+        {% block javascripts %}
             {% do assets.add('jquery',101) %}
             {% do assets.addJs('theme://assets/js/skel.min.js') %}
             {% do assets.addJs('theme://assets/js/util.js') %}
             {% do assets.addJs('theme://assets/js/main.js') %}
         {% endblock %}
         {{ assets.js() }}
-        
-         {% if site.calendar %}
-         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-         {% endif %}
 
-        {% block stylesheets %}
-            {% do assets.addCss('theme://assets/css/main.css') %}
-        {% endblock %}
-        {{ assets.css() }}
-        
-        <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/respond.min.js') }}"></script><![endif]-->
-        <!--[if lte IE 8]><script src="{{ url('theme://assets/css/ie8.css') }}"></script><![endif]-->
+        <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/html5shiv.js') }}"></script><![endif]-->
 
         {% if site.calendar %}
+           <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+       {% endif %}
+
+       <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/respond.min.js') }}"></script><![endif]-->
+       <!--[if lte IE 8]><script src="{{ url('theme://assets/css/ie8.css') }}"></script><![endif]-->
+
+       {% if site.calendar %}
         <script type="text/javascript">
-         $(function() {
+        $(function() {
             $( "#datepicker" ).datepicker({
                 hideIfNoPrevNext: true
             });
         });
         </script>
-        {% endif %}
-        
-        {% endblock head%}
-    </head>
-    <body class="{{ site.sidebar_position }}-sidebar">
-        <div id="wrapper">
+    {% endif %}
+
+    {% endblock head%}
+</head>
+
+<body class="{{ site.sidebar_position }}-sidebar">
+    <div id="wrapper">
         {% block body %}
             <div id="content">
                 <div class="inner">
-                    {% block content %}{% endblock %}
+                    {% block content %}
+                    {% endblock %}
                 </div>
             </div>
         {% endblock %}
@@ -58,7 +60,7 @@
             {% include 'partials/sidebar.html.twig' %}
         {% endblock %}
 
-        </div>
+    </div>
 
-    </body>
+</body>
 </html>
