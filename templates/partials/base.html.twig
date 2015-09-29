@@ -20,9 +20,7 @@
             {% do assets.addJs('theme://assets/js/main.js') %}
         {% endblock %}
         {{ assets.js() }}
-
-        {% include 'partials/init.html.twig' %}
-
+        
          {% if site.calendar %}
          <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
          {% endif %}
