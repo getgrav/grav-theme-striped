@@ -8,14 +8,16 @@
         <meta charset="utf-8" />
         <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
         {% include 'partials/metadata.html.twig' %}
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
 
         {% block javascripts %}
-            <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+            <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/html5shiv.js') }}"></script><![endif]-->
+
             {% do assets.add('jquery',101) %}
-            {% do assets.addJs('theme://js/skel.min.js') %}
-            {% do assets.addJs('theme://js/skel-layers.min.js') %}
+            {% do assets.addJs('theme://assets/js/skel.min.js') %}
+            {% do assets.addJs('theme://assets/js/util.js') %}
+            {% do assets.addJs('theme://assets/js/main.js') %}
         {% endblock %}
         {{ assets.js() }}
 
@@ -26,15 +28,12 @@
          {% endif %}
 
         {% block stylesheets %}
-            {% do assets.addCss('theme://css/skel.css') %}
-            {% do assets.addCss('theme://css/style.css') %}
-            {% do assets.addCss('theme://css/style-desktop.css') %}
-            {% do assets.addCss('theme://css/style-wide.css') %}
+            {% do assets.addCss('theme://assets/css/main.css') %}
         {% endblock %}
-        <noscript>
-            {{ assets.css() }}
-        </noscript>
-        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+        {{ assets.css() }}
+        
+        <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/respond.min.js') }}"></script><![endif]-->
+        <!--[if lte IE 8]><script src="{{ url('theme://assets/css/ie8.css') }}"></script><![endif]-->
 
         {% if site.calendar %}
         <script type="text/javascript">
