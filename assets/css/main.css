@@ -1663,7 +1663,10 @@
 		}
 
 /* Form */
-
+	.form-textarea-wrapper.long textarea {
+		height: 200px;
+		margin-bottom: 20px;
+	}
 	form label {
 		font-family: 'Open Sans Condensed', sans-serif;
 		font-weight: 700;
