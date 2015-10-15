@@ -1,3 +1,10 @@
+# v2.1.0
+## 10/15/2015
+
+1. [](#new)
+    * Removed SimpleForm plugin support due to constant compatibility problems
+    * Added support for Email and Form plugins
+
 # v2.0.0
 ## 09/21/2015
 
