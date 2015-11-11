@@ -9,7 +9,6 @@
     {% endif %}
 
     {% for paginate in pagination %}
-
         {% if paginate.isCurrent %}
             <span>{{ paginate.number }}</span>
         {% elseif paginate.isInDelta %}
@@ -18,7 +17,6 @@
         {% elseif paginate.isDeltaBorder %}
             <span>&hellip;</span>
         {% endif %}
-
     {% endfor %}
     {% if pagination.hasNext %}
         {% set url =  (base_url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
