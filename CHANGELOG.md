@@ -1,3 +1,9 @@
+# v2.1.1
+## 11/19/2015
+
+1. [](#bugfix)
+    * Pagination compatibility
+
 # v2.1.0
 ## 10/15/2015
 
