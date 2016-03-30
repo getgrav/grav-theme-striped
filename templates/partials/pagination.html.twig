@@ -1,4 +1,7 @@
 {% if pagination|length > 1 %}
+{% if base_url == '' %}
+    {% set base_url = '/' %}
+{% endif %}
 <div class="pagination">
     <div class="pages">
       {% if pagination.hasPrev %}
@@ -24,6 +27,6 @@
     {% else %}
         <span>&raquo;</span>
     {% endif %}
-</div>
+    </div>
 </div>
 {% endif %}
