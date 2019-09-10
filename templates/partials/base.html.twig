@@ -18,17 +18,15 @@
 
         {% block javascripts %}
             {% do assets.add('jquery',101) %}
+            {% if site.calendar %}
+              {% do assets.addJs('http://code.jquery.com/ui/1.11.4/jquery-ui.js',100) %}
+            {% endif %}
             {% do assets.addJs('theme://assets/js/skel.min.js') %}
             {% do assets.addJs('theme://assets/js/util.js') %}
             {% do assets.addJs('theme://assets/js/main.js') %}
         {% endblock %}
 
         <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/html5shiv.js') }}"></script><![endif]-->
-
-        {% if site.calendar %}
-           <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-       {% endif %}
-
        <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/respond.min.js') }}"></script><![endif]-->
        <!--[if lte IE 8]><script src="{{ url('theme://assets/css/ie8.css') }}"></script><![endif]-->
 
