@@ -17,7 +17,7 @@
     <header>
         {% if page.header.link %}
             <h2>
-                {% if page.header.continue_link is not sameas(false) %}
+                {% if page.header.continue_link is not same as(false) %}
                     <a href="{{ page.url }}"></a>
                 {% endif %}
                 <a href="{{ page.header.link }}">{{ page.title }}</a>
@@ -32,9 +32,9 @@
 
     <div class="info">
         <span class="date">
-            <span class="month">{{ page.date|date("M") }}</span> 
+            <span class="month">{{ page.date|date("M") }}</span>
             <span class="day">{{ page.date|date("d") }}</span>
-        </span>    
+        </span>
             {% if site.share.facebook or site.share.twitter %}
             <ul class="stats">
                 {% if site.share.twitter %}
@@ -48,9 +48,9 @@
         </div>
 
         {% if big_header %}
-            {{ page.media.images|first.cropResize(1038,437).html(page.title, page.title, 'image featured') }}
+            {{ page.media.images|first.cropResize(1038,437).html(page.title, page.title, 'image featured')|raw }}
         {% else %}
-            {{ page.media.images|first.cropZoom(1038,437).html(page.title, page.title, 'image featured') }}
+            {{ page.media.images|first.cropZoom(1038,437).html(page.title, page.title, 'image featured')|raw }}
         {% endif %}
 
         {% if page.header.author %}
@@ -59,7 +59,7 @@
             {{ page.header.author }}
         </span>
         {% endif %}
-       
+
        {% if page.taxonomy.tag %}
         <ul class="tags">
             <i class="fa fa-tag"></i>
@@ -68,21 +68,21 @@
             {% endfor %}
         </ul>
         {% endif %}
-        
- 
-    {% if page.header.continue_link is sameas(false) %}
-        <p>{{ page.content }}</p>
+
+
+    {% if page.header.continue_link is same as(false) %}
+        <p>{{ page.content|raw }}</p>
         {% if not truncate %}
         {% set show_prev_next = true %}
         {% endif %}
     {% elseif truncate and page.summary != page.content %}
-        <p>{{ page.summary }}</p>
+        <p>{{ page.summary|raw }}</p>
         <p><a class="button" href="{{ page.url }}">Continue Reading...</a></p>
     {% elseif truncate %}
-        <p>{{ page.content|truncate(550) }}</p>
+        <p>{{ page.content|truncate(550)|raw }}</p>
         <p><a class="button" href="{{ page.url }}">Continue Reading...</a></p>
     {% else %}
-        <p>{{ page.content }}</p>
+        <p>{{ page.content|raw }}</p>
         {% set show_prev_next = true %}
     {% endif %}
 
